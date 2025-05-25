@@ -1,0 +1,19 @@
+{
+  "name": "tradepro-database",
+  "version": "1.0.0",
+  "description": "TradePro Database Migrations and Seeds",
+  "scripts": {
+    "migrate": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "migrate:make": "knex migrate:make",
+    "seed": "knex seed:run",
+    "seed:make": "knex seed:make"
+  },
+  "dependencies": {
+    "knex": "^3.0.1",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.10.7"
+  }
+}
