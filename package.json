@@ -1,0 +1,47 @@
+{
+  "name": "tradepro-platform",
+  "version": "1.0.0",
+  "description": "A comprehensive mobile trading platform",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm run install:backend && npm run install:mobile && npm run install:websocket",
+    "install:backend": "cd backend && npm install",
+    "install:mobile": "cd mobile-app && npm install",
+    "install:websocket": "cd websocket-service && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:websocket\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:websocket": "cd websocket-service && npm run dev",
+    "dev:mobile": "cd mobile-app && npm run start",
+    "build": "npm run build:backend && npm run build:websocket",
+    "build:backend": "cd backend && npm run build",
+    "build:websocket": "cd websocket-service && npm run build",
+    "test": "npm run test:backend && npm run test:websocket && npm run test:mobile",
+    "test:backend": "cd backend && npm test",
+    "test:websocket": "cd websocket-service && npm test",
+    "test:mobile": "cd mobile-app && npm test",
+    "lint": "npm run lint:backend && npm run lint:websocket && npm run lint:mobile",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:websocket": "cd websocket-service && npm run lint",
+    "lint:mobile": "cd mobile-app && npm run lint"
+  },
+  "keywords": [
+    "trading",
+    "mobile",
+    "react-native",
+    "nodejs",
+    "websocket",
+    "real-time",
+    "finance"
+  ],
+  "author": "TradePro Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "backend",
+    "mobile-app",
+    "websocket-service",
+    "shared"
+  ]
+}
